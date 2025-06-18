@@ -1,0 +1,57 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --primary-color: #6200ee;
+    --secondary-color: #03dac5;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #eee;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+.task-input,
+.controls {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+#task-list {
+    list-style: none;
+    padding: 1rem;
+}
+.task {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    margin-bottom: 0.5rem;
+    background-color: rgba(98,0,238,0.05);
+}
+.task.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+@media (max-width: 600px) {
+    .task-input,
+    .controls {
+        flex-direction: column;
+    }
+}

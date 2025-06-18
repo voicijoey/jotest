@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Todo List</h1>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+
+    <section class="task-input">
+        <input type="text" id="task-title" placeholder="Add a new task...">
+        <select id="task-category">
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Study">Study</option>
+        </select>
+        <select id="task-priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <input type="date" id="task-due">
+        <button id="add-task">Add</button>
+    </section>
+
+    <section class="controls">
+        <select id="filter-status">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+        </select>
+        <select id="filter-category">
+            <option value="all">All Categories</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Study">Study</option>
+        </select>
+        <input type="text" id="search" placeholder="Search...">
+        <button id="sort-date">Sort by Date</button>
+        <button id="export-btn">Export</button>
+        <input type="file" id="import-file" style="display:none">
+        <button id="import-btn">Import</button>
+    </section>
+
+    <ul id="task-list"></ul>
+
+    <template id="task-template">
+        <li class="task" draggable="true">
+            <input type="checkbox" class="complete">
+            <span class="title"></span>
+            <span class="category"></span>
+            <span class="priority"></span>
+            <span class="due"></span>
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </li>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
